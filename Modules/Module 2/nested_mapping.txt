@@ -1,0 +1,105 @@
+Sub Nested_Mapping()
+
+ Application.ScreenUpdating = False
+ 
+ Dim i, j, k As Integer
+ 
+ 
+ Sheets("BS Insights").Select
+ 
+ Header_Name = Sheets("Working Sheet").Range("B2").Value
+ 
+ For i = 3 To Sheets("Working Sheet").Range("B3")
+ 
+ k = 3
+   
+   For j = Sheets("Working Sheet").Range("E2") To Sheets("Working Sheet").Range("F2")
+   
+  '''''''''Particulars Row Number addition
+ R = Sheets("Working Sheet").Range("B4").Value + 1
+ R1 = k
+ R2 = R1 + R
+ R3 = R2 + R
+ R4 = R3 + R
+ R5 = R4 + R
+ R6 = R5 + R
+ R7 = R6 + R
+ R8 = R7 + R
+ R9 = R8 + R
+ R10 = R9 + R
+ R11 = R10 + R
+ R12 = R11 + R
+ R13 = R12 + R
+ R14 = R13 + R
+ R15 = R14 + R
+ R16 = R15 + R
+ R17 = R16 + R
+ R18 = R17 + R
+ R19 = R18 + R
+ R20 = R19 + R
+ R21 = R20 + R
+ R22 = R21 + R
+ R23 = R22 + R
+ R24 = R23 + R
+ 
+ ''''''''Date finding
+ D = Sheets("Working Sheet").Range("B4").Value + 1
+ D1 = 1
+ D2 = D1 + D
+ D3 = D2 + D
+ D4 = D3 + D
+ D5 = D4 + D
+ D6 = D5 + D
+ D7 = D6 + D
+ D8 = D7 + D
+ D9 = D8 + D
+ D10 = D9 + D
+ D11 = D10 + D
+ D12 = D11 + D
+ D13 = D12 + D
+ D14 = D13 + D
+ D15 = D14 + D
+ D16 = D15 + D
+ D17 = D16 + D
+ D18 = D17 + D
+ D19 = D18 + D
+ D20 = D19 + D
+ D21 = D20 + D
+ D22 = D21 + D
+ D23 = D22 + D
+ D24 = D23 + D
+ 
+ Sheets("BS INSIGHTS").Select
+ 
+ Form = "IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D1 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & R1 & "," & i & ",4,,""Master TB"")),IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D2 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R2 & "," & i & ",4,,""Master TB"")), IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D3 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R3 & "," & i & ",4,,""Master TB"")), IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D4 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R4 & "," & i & ",4,,""Master TB"")), IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D5 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R5 & "," & i & ",4,,""Master TB"")), IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D6 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R6 & "," & i & ",4,,""Master TB"")), IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D7 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R7 & "," & i & ",4,,""Master TB"")), IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D8 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R8 & "," & i & ",4,,""Master TB"")),IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D9 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R9 & "," & i & ",4,,""Master TB"")),IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D10 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R10 & "," & i & ",4,,""Master TB"")),IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D11 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R11 & "," & i & ",4,,""Master TB"")),IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D12 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & R12 & "," & i & ",4,,""Master TB"")),IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D13 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & R13 & "," & i & ",4,,""Master TB"")),IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D14 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R14 & "," & i & ",4,,""Master TB"")), IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D15 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R15 & "," & i & ",4,,""Master TB"")), IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D16 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R16 & "," & i & ",4,,""Master TB"")), IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D17 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R16 & "," & i & ",4,,""Master TB"")), IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D18 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R17 & "," & i & ",4,,""Master TB"")), IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D19 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R18 & "," & i & ",4,,""Master TB"")), IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D20 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R19 & "," & i & ",4,,""Master TB"")),IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D21 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R20 & "," & i & ",4,,""Master TB"")),IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D22 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R21 & "," & i & ",4,,""Master TB"")),IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D23 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" _
+         & Header_Name & ",'Master TB'!$C:$C,0)+" & R22 & "," & i & ",4,,""Master TB"")),IF(INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & D24 & ",2,4,,""Master TB""))=TopSheet!$C$4,INDIRECT(ADDRESS(MATCH(" & Header_Name & ",'Master TB'!$C:$C,0)+" & R24 & "," & i & ",4,,""Master TB"")),""--""))))))))))))))))))))))))"
+
+         
+ Cells(j, i).Formula = "=" & Form
+
+ 
+ k = k + 1
+ Next
+
+Next
+
+End Sub

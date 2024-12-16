@@ -1,0 +1,57 @@
+Sub CFO_Dashboard_YTD()
+
+Application.AskToUpdateLinks = False
+
+    With Application
+         'CalcMode = .Calculation
+        .DisplayAlerts = False
+        .ScreenUpdating = False
+        .EnableEvents = False
+    End With
+    
+macro_book = ActiveWorkbook.Name
+   
+'Create New PPt
+ Set ppt_app = New PowerPoint.Application
+     ppt_app.Visible = True
+     ppt_app.WindowState = ppWindowMaximized
+     
+
+'Create a new presentation
+Set ppt_pres = ppt_app.Presentations.Add
+    
+''''''''Dashboard PPt
+
+Set ppt_slide = ppt_pres.Slides.Add(1, 12)
+     
+'Set a reference
+Workbooks(macro_book).Activate
+
+Set Rng_BS = Workbooks(macro_book).Sheets("CFO Dashboard YTD").Range("C3:U76")
+
+'Set Rng_BS = Workbooks(macro_book).Sheets("BS").Range("B3:T43")
+    
+'Copy
+Rng_BS.Copy
+    
+'Paste the range in the slide
+Set sh_BS = ppt_slide.Shapes.PasteSpecial(DataType:=ppPasteOLEObject, Link:=msoTrue)
+
+Application.CutCopyMode = False
+
+With sh_BS(1)
+
+         .LockAspectRatio = mscoCtrue
+ '         .Width = ppt_pres.PageSetup.SlideWidth - 30
+          .Height = 530
+          .Left = 0
+          .Width = 550
+          .Left = 190
+         .Top = 10
+End With
+
+
+
+End Sub
+
+

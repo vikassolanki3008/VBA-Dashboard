@@ -1,0 +1,16 @@
+Sub Row_Delete()
+strt:
+paswrd = InputBox("Please Provide the password")
+If paswrd = "" Then Exit Sub    ' ES is end sub
+If paswrd <> "abcd" Then
+MsgBox "The password provided is incorrect, Please provide a correct password"
+GoTo strt
+End If
+response = MsgBox("Are you sure you would like to delete the selected rows?", vbYesNo)
+If response = vbNo Then Exit Sub
+ActiveSheet.unprotect "1234"
+Application.ScreenUpdating = False
+Selection.EntireRow.Delete
+ActiveSheet.Protect "1234"
+Application.ScreenUpdating = True
+End Sub

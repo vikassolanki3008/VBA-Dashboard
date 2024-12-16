@@ -1,0 +1,26 @@
+'Sub Auto_Open()
+
+Sub Auto_fit()
+ 
+    Application.ScreenUpdating = False
+    Dim wkSt As String
+    Dim wkBk As Worksheet
+    wkSt = ActiveSheet.Name
+    For Each wkBk In ActiveWorkbook.Worksheets
+    
+        If wkBk.Visible = True Then
+        On Error Resume Next
+        wkBk.Activate
+        Cells.SpecialCells(xlCellTypeVisible).Columns.AutoFit
+    
+        Else
+        End If
+    
+    Next wkBk
+    
+    Sheets(wkSt).Select
+    Application.ScreenUpdating = True
+     
+
+
+End Sub

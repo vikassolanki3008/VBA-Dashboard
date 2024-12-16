@@ -1,0 +1,15 @@
+Sub unprotect()
+
+strt:
+paswrd = InputBox("Please Provide the password")
+If paswrd = "" Then Exit Sub    ' ES is end sub
+If paswrd <> "$911@PFG" Then
+MsgBox "The password provided is incorrect, Please provide a correct password"
+GoTo strt
+End If
+For i = 1 To Sheets.Count
+    Sheets(i).unprotect "1234"
+ 
+      
+    Next i
+End Sub

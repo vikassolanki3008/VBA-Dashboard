@@ -1,0 +1,12 @@
+Dim ppt_app As PowerPoint.Application
+Dim ppt_pres As PowerPoint.Presentation
+Dim ppt_slide As PowerPoint.Slide
+
+Dim Rng_BS As Range
+Dim Rng_ppt2, Rng_ppt3, Rng_ppt4, Rng_ppt5, Rng_ppt6 As Range
+Dim Rng_ppt7, Rng_PLIN, Rng_KPI1, Rng_KPI2, Rng_KPI3 As Range
+
+Dim Left_Arr, Top_Arr, Height_Arr, Width_Arr As Variant
+Dim x, y, Z As Integer
+
+Dim BS1_array, BS2_array, KPI3_array, ExcObj, ExcObj1, ExcObj2 As Variant

@@ -1,0 +1,14 @@
+Sub No_Gridelines()
+'
+' No_Gridelines Macro
+'
+' Keyboard Shortcut: Ctrl+Shift+G
+'
+    Sheets(Array("TopSheet", "Instruction", "Assumption", "BS", "BS INSIGHTS", _
+        "Working Sheet", "PL", "PL INSIGHTS", "BS For cashflow", "Cashflow", "KPI", _
+        "BS Groupings", "Top TP & TR", "PL Groupings", "Master TB", "Budget PL", _
+        "Capital Budget", "BS Budget", "ppt 2", "ppt 3", "ppt 4", "ppt 5", "ppt 6", "ppt 7")). _
+        Select
+    Sheets("ppt 7").Activate
+    ActiveWindow.DisplayGridlines = False
+End Sub

@@ -1,0 +1,3 @@
+Sub test()
+ActiveSheet.unprotect "1234"
+End Sub

@@ -1,0 +1,18 @@
+Sub dimensions()
+
+Dim L As Long
+Dim T As Long
+Dim H As Long
+Dim W As Long
+
+    With ActiveWindow.Selection
+        If .Type = ppSelectionShapes Then
+            L = .ShapeRange.Left
+            T = .ShapeRange.Top
+            H = .ShapeRange.Height
+            W = .ShapeRange.Width
+    Else
+    End If
+      End With
+         
+End Sub

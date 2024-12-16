@@ -1,0 +1,615 @@
+Sub Excel_To_PPT()
+
+Application.AskToUpdateLinks = False
+
+    With Application
+         'CalcMode = .Calculation
+        .DisplayAlerts = False
+        .ScreenUpdating = False
+        .EnableEvents = False
+    End With
+    
+macro_book = ActiveWorkbook.Name
+   
+'Create New PPt
+ Set ppt_app = New PowerPoint.Application
+     ppt_app.Visible = True
+     ppt_app.WindowState = ppWindowMaximized
+     
+
+'Create a new presentation
+Set ppt_pres = ppt_app.Presentations.Add
+    
+
+
+''''''''''''''''Select BS''''''''''''Slide 1'''''''''''''''
+
+Set ppt_slide = ppt_pres.Slides.Add(1, 12)
+     
+'Set a reference
+Workbooks(macro_book).Activate
+Set Rng_BS = Workbooks(macro_book).Sheets("BS").Range("B3:V42")
+    
+'Copy
+Rng_BS.Copy
+    
+'Paste the range in the slide
+Set sh_BS = ppt_slide.Shapes.PasteSpecial(DataType:=ppPasteOLEObject, Link:=msoTrue)
+
+Application.CutCopyMode = False
+
+With sh_BS(1)
+
+         .LockAspectRatio = mscoCtrue
+ '         .Width = ppt_pres.PageSetup.SlideWidth - 30
+          .Height = 480
+          .Left = 0
+          .Width = 869.76
+          .Left = 46.8
+         .Top = 33.12
+End With
+
+Call Client_Name_Title
+
+
+
+'''''''''''''''ppt 2'''''''Slide 2''''''''''''''''''''''''
+
+Set ppt_slide = ppt_pres.Slides.Add(1, 12)
+ppt_slide.MoveTo (ppt_pres.Slides.Count)
+
+
+'Set a reference
+Workbooks(macro_book).Activate
+Set Rng_ppt2 = Workbooks(macro_book).Sheets("ppt 2").Range("A2:M65")
+    
+'Copy
+Rng_ppt2.Copy
+    
+'Paste the range in the slide
+Set sh_ppt2 = ppt_slide.Shapes.PasteSpecial(DataType:=ppPasteOLEObject, Link:=msoTrue)
+
+Application.CutCopyMode = False
+
+With sh_ppt2(1)
+
+         .LockAspectRatio = mscoCtrue
+ '         .Width = ppt_pres.PageSetup.SlideWidth - 30
+          .Height = 480
+          .Left = 0
+          .Width = 869.76
+          .Left = 46.8
+         .Top = 33.12
+End With
+
+Call Client_Name_Title
+
+
+''''''''''''''''ppt3''''''''Slide 3''''''''''''''''''''''
+
+Set ppt_slide = ppt_pres.Slides.Add(1, 12)
+ppt_slide.MoveTo (ppt_pres.Slides.Count)
+
+'Set a reference
+Workbooks(macro_book).Activate
+Set Rng_ppt3 = Workbooks(macro_book).Sheets("ppt 3").Range("A2:AM65")
+    
+'Copy
+Rng_ppt3.Copy
+    
+'Paste the range in the slide
+Set sh_ppt3 = ppt_slide.Shapes.PasteSpecial(DataType:=ppPasteOLEObject, Link:=msoTrue)
+
+Application.CutCopyMode = False
+
+With sh_ppt3(1)
+
+         .LockAspectRatio = mscoCtrue
+ '         .Width = ppt_pres.PageSetup.SlideWidth - 30
+          .Height = 480
+          .Left = 0
+          .Width = 869.76
+          .Left = 46.8
+         .Top = 33.12
+End With
+
+Call Client_Name_Title
+
+
+'''''''''''''''ppt4''''''''''''Slide 4'''''''''''''''''''
+
+Set ppt_slide = ppt_pres.Slides.Add(1, 12)
+'Set ppt_slide = ppt_pres.Slides.AddSlide(1, ppt_pres.SlideMaster.CustomLayouts(6))
+     
+   ppt_slide.MoveTo (ppt_pres.Slides.Count)
+
+'Set a reference
+Workbooks(macro_book).Activate
+Set Rng_ppt4 = Workbooks(macro_book).Sheets("ppt 4").Range("A2:AP61")
+    
+'Copy
+Rng_ppt4.Copy
+    
+'Paste the range in the slide
+Set sh_ppt4 = ppt_slide.Shapes.PasteSpecial(DataType:=ppPasteOLEObject, Link:=msoTrue)
+
+Application.CutCopyMode = False
+
+With sh_ppt4(1)
+
+         .LockAspectRatio = mscoCtrue
+ '         .Width = ppt_pres.PageSetup.SlideWidth - 30
+          .Height = 480
+          .Left = 0
+          .Width = 869.76
+          .Left = 46.8
+         .Top = 33.12
+End With
+
+Call Client_Name_Title
+
+
+''''''''''''''''''''ppt5''''''''Slide 5'''''''''''''''''''''''''''''''''''
+
+Set ppt_slide = ppt_pres.Slides.Add(1, 12)
+ppt_slide.MoveTo (ppt_pres.Slides.Count)
+
+'Set a reference
+Workbooks(macro_book).Activate
+Set Rng_ppt5 = Workbooks(macro_book).Sheets("ppt 5").Range("A2:AP68")
+    
+'Copy
+Rng_ppt5.Copy
+    
+'Paste the range in the slide
+Set sh_ppt5 = ppt_slide.Shapes.PasteSpecial(DataType:=ppPasteOLEObject, Link:=msoTrue)
+
+Application.CutCopyMode = False
+
+With sh_ppt5(1)
+
+         .LockAspectRatio = mscoCtrue
+ '         .Width = ppt_pres.PageSetup.SlideWidth - 30
+          .Height = 480
+          .Left = 0
+          .Width = 869.76
+          .Left = 46.8
+         .Top = 33.12
+End With
+
+Call Client_Name_Title
+
+
+''''''''''''''''ppt6''''''''''Slide 6'''''''''''''''''''''''
+
+Set ppt_slide = ppt_pres.Slides.Add(1, 12)
+ppt_slide.MoveTo (ppt_pres.Slides.Count)
+
+'Set a reference
+Workbooks(macro_book).Activate
+Set Rng_ppt6 = Workbooks(macro_book).Sheets("ppt 6").Range("B3:T33")
+    
+'Copy
+Rng_ppt6.Copy
+    
+'Paste the range in the slide
+Set sh_ppt6 = ppt_slide.Shapes.PasteSpecial(DataType:=ppPasteOLEObject, Link:=msoTrue)
+
+Application.CutCopyMode = False
+
+With sh_ppt6(1)
+
+         .LockAspectRatio = mscoCtrue
+ '         .Width = ppt_pres.PageSetup.SlideWidth - 30
+          .Height = 480
+          .Left = 0
+          .Width = 869.76
+          .Left = 46.8
+         .Top = 33.12
+End With
+
+Call Client_Name_Title
+
+
+
+''''''''''''''ppt7''''''''''''Slide 7'''''''''''''''''''''
+
+Set ppt_slide = ppt_pres.Slides.Add(1, 12)
+ppt_slide.MoveTo (ppt_pres.Slides.Count)
+
+'Set a reference
+Workbooks(macro_book).Activate
+Set Rng_ppt7 = Workbooks(macro_book).Sheets("ppt 7").Range("B3:Z32")
+    
+'Copy
+Rng_ppt7.Copy
+    
+'Paste the range in the slide
+Set sh_ppt7 = ppt_slide.Shapes.PasteSpecial(DataType:=ppPasteOLEObject, Link:=msoTrue)
+
+Application.CutCopyMode = False
+
+With sh_ppt7(1)
+
+         .LockAspectRatio = mscoCtrue
+ '         .Width = ppt_pres.PageSetup.SlideWidth - 30
+          .Height = 480
+          .Left = 0
+          .Width = 869.76
+          .Left = 46.8
+         .Top = 33.12
+End With
+
+Call Client_Name_Title
+
+
+'''''''BS Insights 1''''''''Slide 8''''''''''''''''''''''
+
+Set ppt_slide = ppt_pres.Slides.Add(1, 11)
+ppt_slide.MoveTo (ppt_pres.Slides.Count)
+
+'Set a reference
+Workbooks(macro_book).Activate
+Set Rng_BSIN_1 = Workbooks(macro_book).Sheets("BS INSIGHTS").Range("B5:K33")
+    
+'Copy
+Rng_BSIN_1.Copy
+    
+'Paste the range in the slide
+Set sh_BSIN_1 = ppt_slide.Shapes.PasteSpecial(DataType:=ppPasteOLEObject, Link:=msoTrue)
+
+Application.CutCopyMode = False
+
+
+With ppt_slide.Shapes.Title
+    .TextFrame.TextRange.Text = "BS INSIGHTS"
+    .TextFrame.TextRange.Font.Name = "Goudy Old Style"
+    .TextFrame.TextRange.Font.Size = 20
+    .TextFrame.TextRange.Font.Bold = msoCTrue
+    .TextFrame.TextRange.Font.Color.RGB = RGB(255, 255, 255)
+    .Fill.BackColor.RGB = RGB(0, 128, 128)
+    .TextEffect.Alignment = msoTextEffectAlignmentCentered
+    .Height = 18.52
+    .Width = 869.76
+    .Left = 46.8
+    .Top = 33.12
+    
+End With
+   
+With sh_BSIN_1(1)
+
+         .LockAspectRatio = mscoCtrue
+ '         .Width = ppt_pres.PageSetup.SlideWidth - 30
+          .Height = 415
+          .Left = 0
+          .Width = 869.76
+          .Left = 46.8
+         .Top = 51.84
+End With
+
+Call Client_Name_Title
+
+
+''''''''BS Insights 2'''''''''''Slide 9''''''''''''''''''
+''''Add multiple range in one slide using array
+
+Set ppt_slide = ppt_pres.Slides.Add(1, 11)
+ppt_slide.MoveTo (ppt_pres.Slides.Count)
+
+'Set a reference
+Workbooks(macro_book).Activate
+
+BS1_array = Array(Sheets("BS INSIGHTS").Range("B35:L49"), Sheets("BS INSIGHTS").Range("B72:L84"), Sheets("BS INSIGHTS").Range("B147:L156"))
+
+'''Define dimension
+'Height_Arr = Array(0, 0, 0)
+Height_Arr = Array(170.077, 163.77, 170.077)
+Width_Arr = Array(869.76, 869.76, 869.76)
+Left_Arr = Array(46.8, 46.8, 46.8)
+Top_Arr = Array(51.87, 216, 369.966)
+
+'''Loop and copy each object
+For x = LBound(BS1_array) To UBound(BS1_array)
+
+Set ExcObj = BS1_array(x)
+    ExcObj.Copy
+
+Application.Wait Now + #12:00:00 AM#
+
+''''Paste the object in the slides
+ppt_slide.Shapes.PasteSpecial DataType:=ppPasteOLEObject, Link:=msoTrue
+
+
+''''Set shape
+Set ppt_shape = ppt_slide.Shapes(ppt_slide.Shapes.Count)
+
+With ppt_shape
+    .LockAspectRatio = mscoCtrue
+    .Left = Left_Arr(x)
+    .Top = Top_Arr(x)
+    .Height = Height_Arr(x)
+    .Width = Width_Arr(x)
+
+End With
+
+Next
+
+With ppt_slide.Shapes.Title
+    .TextFrame.TextRange.Text = "BS INSIGHTS"
+    .TextFrame.TextRange.Font.Name = "Goudy Old Style"
+    .TextFrame.TextRange.Font.Size = 20
+  .Width = 869.76
+    .Left = 46.8
+    .Top = 33.12
+    
+End With
+
+Call Client_Name_Title
+
+
+''''''''BS Insights 3'''''''''Slide 10
+''''Add multiple range in one slide using array
+
+Set ppt_slide = ppt_pres.Slides.Add(1, 11)
+ppt_slide.MoveTo (ppt_pres.Slides.Count)
+
+'Set a reference
+Workbooks(macro_book).Activate
+
+BS2_array = Array(Sheets("BS INSIGHTS").Range("B161:L171"), Sheets("BS INSIGHTS").Range("B228:L238"))
+
+'''Define dimension
+Height_Arr = Array(232.56, 232.56)
+Width_Arr = Array(869.76, 869.76)
+Left_Arr = Array(46.8, 46.8)
+Top_Arr = Array(51.84, 284.4)
+
+'''Loop and copy each object
+For y = LBound(BS2_array) To UBound(BS2_array)
+
+Set ExcObj1 = BS2_array(y)
+    ExcObj1.Copy
+
+Application.Wait Now + #12:00:00 AM#
+
+''''Paste the object in the slides
+ppt_slide.Shapes.PasteSpecial DataType:=ppPasteOLEObject, Link:=msoTrue
+
+
+''''Set shape
+Set ppt_shape = ppt_slide.Shapes(ppt_slide.Shapes.Count)
+
+With ppt_shape
+    .LockAspectRatio = mscoCtrue
+    .Left = Left_Arr(y)
+    .Top = Top_Arr(y)
+    .Height = Height_Arr(y)
+    .Width = Width_Arr(y)
+
+End With
+
+Next
+
+With ppt_slide.Shapes.Title
+    .TextFrame.TextRange.Text = "BS INSIGHTS"
+    .TextFrame.TextRange.Font.Name = "Goudy Old Style"
+    .TextFrame.TextRange.Font.Size = 20
+    .TextFrame.TextRange.Font.Bold = msoCTrue
+    .TextFrame.TextRange.Font.Color.RGB = RGB(255, 255, 255)
+    .Fill.BackColor.RGB = RGB(0, 128, 128)
+    .TextEffect.Alignment = msoTextEffectAlignmentCentered
+    .Height = 18.72
+    .Width = 869.76
+    .Left = 46.8
+    .Top = 33.12
+    
+End With
+
+Call Client_Name_Title
+
+
+
+'''''''PL Insights'''''''Slide 11
+
+Set ppt_slide = ppt_pres.Slides.Add(1, 11)
+ppt_slide.MoveTo (ppt_pres.Slides.Count)
+
+'Set a reference
+Workbooks(macro_book).Activate
+Set Rng_PLIN = Workbooks(macro_book).Sheets("PL INSIGHTS").Range("A5:I27")
+    
+'Copy
+Rng_PLIN.Copy
+    
+'Paste the range in the slide
+Set sh_PLIN = ppt_slide.Shapes.PasteSpecial(DataType:=ppPasteOLEObject, Link:=msoTrue)
+
+Application.CutCopyMode = False
+
+With ppt_slide.Shapes.Title
+    .TextFrame.TextRange.Text = "PL INSIGHTS"
+    .TextFrame.TextRange.Font.Name = "Goudy Old Style"
+    .TextFrame.TextRange.Font.Size = 20
+    .TextFrame.TextRange.Font.Bold = msoCTrue
+    .TextFrame.TextRange.Font.Color.RGB = RGB(255, 255, 255)
+    .Fill.BackColor.RGB = RGB(0, 128, 128)
+    .TextEffect.Alignment = msoTextEffectAlignmentCentered
+    .Height = 18.72
+    .Width = 869.76
+    .Left = 46.8
+    .Top = 33.12
+    
+End With
+   
+With sh_PLIN(1)
+
+         .LockAspectRatio = mscoCtrue
+      '    .Width = ppt_pres.PageSetup.SlideWidth - 30
+          .Height = 415
+          .Left = 0
+          .Width = 869.76
+          .Left = 46.8
+         .Top = 51.84
+End With
+
+Call Client_Name_Title
+
+
+''''''KPI 1'''''''''Slide 12
+
+Set ppt_slide = ppt_pres.Slides.Add(1, 11)
+ppt_slide.MoveTo (ppt_pres.Slides.Count)
+
+'Set a reference
+Workbooks(macro_book).Activate
+Set Rng_KPI1 = Workbooks(macro_book).Sheets("KPI").Range("A4:N37")
+    
+'Copy
+Rng_KPI1.Copy
+    
+'Paste the range in the slide
+Set sh_KPI1 = ppt_slide.Shapes.PasteSpecial(DataType:=ppPasteOLEObject, Link:=msoTrue)
+
+Application.CutCopyMode = False
+
+With ppt_slide.Shapes.Title
+    .TextFrame.TextRange.Text = "KPI"
+    .TextFrame.TextRange.Font.Name = "Goudy Old Style"
+    .TextFrame.TextRange.Font.Size = 20
+    .TextFrame.TextRange.Font.Bold = msoCTrue
+    .TextFrame.TextRange.Font.Color.RGB = RGB(255, 255, 255)
+    .Fill.BackColor.RGB = RGB(0, 128, 128)
+    .TextEffect.Alignment = msoTextEffectAlignmentCentered
+    .Height = 18.72
+    .Width = 869.76
+    .Left = 46.8
+    .Top = 33.12
+    
+End With
+   
+With sh_KPI1(1)
+
+         .LockAspectRatio = mscoCtrue
+ '         .Width = ppt_pres.PageSetup.SlideWidth - 30
+          .Height = 415
+          .Left = 0
+          .Width = 869.76
+          .Left = 46.8
+         .Top = 51.84
+End With
+
+Call Client_Name_Title
+
+
+''''''''''''''KPI 2''''''''Slide 13'''''''''''''
+
+Set ppt_slide = ppt_pres.Slides.Add(1, 11)
+ppt_slide.MoveTo (ppt_pres.Slides.Count)
+
+'Set a reference
+Workbooks(macro_book).Activate
+Set Rng_KPI2 = Workbooks(macro_book).Sheets("KPI").Range("A39:N69")
+    
+'Copy
+Rng_KPI2.Copy
+    
+'Paste the range in the slide
+Set sh_KPI2 = ppt_slide.Shapes.PasteSpecial(DataType:=ppPasteOLEObject, Link:=msoTrue)
+
+Application.CutCopyMode = False
+
+With ppt_slide.Shapes.Title
+    .TextFrame.TextRange.Text = "KPI"
+    .TextFrame.TextRange.Font.Name = "Goudy Old Style"
+    .TextFrame.TextRange.Font.Size = 20
+    .TextFrame.TextRange.Font.Bold = msoCTrue
+    .TextFrame.TextRange.Font.Color.RGB = RGB(255, 255, 255)
+    .Fill.BackColor.RGB = RGB(0, 128, 128)
+    .TextEffect.Alignment = msoTextEffectAlignmentCentered
+    .Height = 18.72
+    .Width = 869.76
+    .Left = 46.8
+    .Top = 33.12
+    
+End With
+   
+With sh_KPI2(1)
+
+         .LockAspectRatio = mscoCtrue
+   '       .Width = ppt_pres.PageSetup.SlideWidth - 30
+          .Height = 415
+          .Left = 0
+          .Width = 869.76
+          .Left = 46.8
+         .Top = 51.84
+End With
+
+Call Client_Name_Title
+
+
+'''''''''''''KPI'''''''''''Slide 14'''''''''''''
+
+Set ppt_slide = ppt_pres.Slides.Add(1, 11)
+ppt_slide.MoveTo (ppt_pres.Slides.Count)
+
+'Set a reference
+Workbooks(macro_book).Activate
+
+KPI3_array = Array(Sheets("KPI").Range("A71:J129"), Sheets("KPI").Range("S71:AA105"))
+
+'''Define dimension
+Height_Arr = Array(461.52, 461.52)
+Width_Arr = Array(465.84, 434.88)
+Left_Arr = Array(46.8, 512.64)
+Top_Arr = Array(51.84, 51.84)
+
+'''Loop and copy each object
+For Z = LBound(KPI3_array) To UBound(KPI3_array)
+
+Set ExcObj2 = KPI3_array(Z)
+    ExcObj2.Copy
+
+Application.Wait Now + #12:00:00 AM#
+
+''''Paste the object in the slides
+ppt_slide.Shapes.PasteSpecial DataType:=ppPasteOLEObject, Link:=msoTrue
+
+
+''''Set shape
+Set ppt_shape = ppt_slide.Shapes(ppt_slide.Shapes.Count)
+
+With ppt_shape
+    .LockAspectRatio = mscoCtrue
+    .Left = Left_Arr(Z)
+    .Top = Top_Arr(Z)
+    .Height = Height_Arr(Z)
+    .Width = Width_Arr(Z)
+
+End With
+
+Next
+
+With ppt_slide.Shapes.Title
+    .TextFrame.TextRange.Text = "KPI"
+    .TextFrame.TextRange.Font.Name = "Goudy Old Style"
+    .TextFrame.TextRange.Font.Size = 20
+    .TextFrame.TextRange.Font.Bold = msoCTrue
+    .TextFrame.TextRange.Font.Color.RGB = RGB(255, 255, 255)
+    .Fill.BackColor.RGB = RGB(0, 128, 128)
+    .TextEffect.Alignment = msoTextEffectAlignmentCentered
+    .Height = 18.72
+    .Width = 869.76
+    .Left = 46.8
+    .Top = 33.12
+    
+End With
+
+Call Client_Name_Title
+
+End Sub    .TextFrame.TextRange.Font.Bold = msoCTrue
+    .TextFrame.TextRange.Font.Color.RGB = RGB(255, 255, 255)
+    .Fill.BackColor.RGB = RGB(0, 128, 128)
+    .TextEffect.Alignment = msoTextEffectAlignmentCentered
+    .Height = 18.72
+  
+

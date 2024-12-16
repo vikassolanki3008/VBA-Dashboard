@@ -1,0 +1,34 @@
+
+Sub TDS()
+'
+' TDS Macro
+'
+' Keyboard Shortcut: Ctrl+Shift+T
+'
+    ActiveCell.Offset(2, 4).Range("A1").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=R832C13-RC[1]"
+    ActiveCell.Select
+    Selection.Copy
+    ActiveCell.Offset(1, 0).Range("A1:A4").Select
+    ActiveSheet.Paste
+    ActiveCell.Offset(-1, -4).Range("A1:F5").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    ActiveCell.Offset(9, 0).Range("A1").Select
+    Selection.PasteSpecial Paste:=xlPasteAll, Operation:=xlNone, SkipBlanks:= _
+        False, Transpose:=False
+    ActiveCell.Offset(0, 4).Range("A1").Select
+    Application.CutCopyMode = False
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=R[1]C[7]-RC[1]"
+    ActiveCell.Select
+    ActiveCell.FormulaR1C1 = "=R841C13-RC[1]"
+    ActiveCell.Select
+    Selection.Copy
+    ActiveCell.Range("A1:A2").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    ActiveSheet.Paste
+    Application.CutCopyMode = False
+    ActiveCell.Select
+End Sub

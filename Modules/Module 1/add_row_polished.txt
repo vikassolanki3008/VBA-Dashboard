@@ -1,0 +1,73 @@
+Sub add_rows_polished()
+
+strt:
+paswrd = InputBox("Please Provide the password")
+If paswrd = "" Then Exit Sub    ' ES is end sub
+If paswrd <> "abcd" Then
+MsgBox "The password provided is incorrect, Please provide a correct password"
+GoTo strt
+End If
+
+ActiveSheet.unprotect "1234"
+activerow = ActiveCell.Row
+
+If Cells(activerow, 2) <> "Subtotal" Then           'Cells(activerow, 2) <> "Subtotal"
+MsgBox "You can add rows only if your active row is a Subtotal row. Keep your cell pointer on a row which has the word Subtotal written in its B Column and then re-run this process."
+GoTo reprotect
+End If                                              'Cells(activerow, 2) <> "Subtotal"
+
+backwards:
+rnge = InputBox("How many rows do you want to add?", "Rows to add", 1)
+If rnge = "" Then GoTo reprotect
+
+If Val(rnge) = "0" Or Round(Val(rnge), 0) <> Val(rnge) Then           'IsError(IsNumeric(rnge)) = True Or Round(rnge, 0) <> rnge
+MsgBox "You specified " & rnge & " as the number of rows. Please specify a valid whole number."
+GoTo backwards
+End If                                                                      'IsError(IsNumeric(rnge)) = True Or Round(rnge, 0) <> rnge
+
+rnge = Val(rnge)
+
+Application.ScreenUpdating = False
+lastcolumn = Cells(activerow, Columns.Count).End(xlToLeft).Column
+lastR = activerow + rnge - 1
+
+Range(Cells(activerow, 1), Cells(lastR, 1)).Select
+Selection.EntireRow.Select
+Selection.Insert Shift:=xlDown
+    
+Range(Cells(activerow - 1, 1), Cells(activerow - 1, lastcolumn)).Copy
+Range(Cells(activerow, 1), Cells(lastR, lastcolumn)).PasteSpecial (xlPasteFormulas)
+Application.CutCopyMode = False
+Range(Cells(activerow, 2), Cells(lastR, 2)).ClearContents
+   
+'to determine the firstrow
+For i = activerow - 1 To 1 Step -1
+If Cells(i, 1) = 1 Then             'Cells(i, 1) = 1
+firstR = i
+Exit For
+End If                              'Cells(i, 1) = 1
+Next i
+    
+'to put the subtotals
+For j = 3 To lastcolumn
+If Columns(j).Hidden = True Then GoTo nextj
+formula_range = "=SUM(R" & firstR & "C:R" & lastR & "C)"
+Cells(lastR + 1, j) = formula_range
+nextj:
+Next j
+
+'To lock cells and hide formulas for the newly added range
+ActiveSheet.Range(Cells(activerow, 1), Cells(lastR + 1, lastcolumn)).Locked = True
+ActiveSheet.Range(Cells(activerow, 1), Cells(lastR + 1, lastcolumn)).FormulaHidden = True
+'To lock cells and hide formulas for the newly added range
+ActiveSheet.Range(Cells(activerow, 1), Cells(lastR, 2)).Locked = False
+ActiveSheet.Range(Cells(activerow, 1), Cells(lastR, 2)).FormulaHidden = False
+reprotect:
+    With ActiveSheet
+        .EnableOutlining = True
+        .Protect UserInterfaceOnly:=True, Password:="1234"
+    End With
+    
+Application.ScreenUpdating = True
+
+End Sub

@@ -1,0 +1,21 @@
+Sub Client_Name_Title()
+
+Dim C_Sh As Object
+
+Set C_Sh = ppt_slide.Shapes.AddTextbox(msoTextOrientationHorizontal, 50, 100, 600, 100)
+
+With C_Sh.TextFrame
+  .TextRange.Text = Sheets("TopSheet").Range("B2")
+  .TextRange.Paragraphs.ParagraphFormat.Alignment = ppAlignCenter
+  .TextRange.Font.Name = "Goudy old Style"
+  .TextRange.Font.Size = 18
+  .TextRange.Font.Color.RGB = RGB(255, 255, 255)
+  .TextRange.Font.Bold = msoCTrue
+End With
+     
+C_Sh.Fill.BackColor.RGB = RGB(0, 0, 0)
+'oSh.Height = 28.8
+C_Sh.Top = 4.32
+C_Sh.Left = 46.8
+C_Sh.Width = 869.76
+End Sub

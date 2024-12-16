@@ -1,0 +1,14 @@
+Sub Protect()
+strt:
+paswrd = InputBox("Please Provide the password")
+If paswrd = "" Then Exit Sub    ' ES is end sub
+If paswrd <> "GFP@119$" Then
+MsgBox "The password provided is incorrect, Please provide a correct password"
+GoTo strt
+End If
+For i = 1 To Sheets.Count
+    Sheets(i).Protect "1234"
+ 
+      
+    Next i
+End Sub
